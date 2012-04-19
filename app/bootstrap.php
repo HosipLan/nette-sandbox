@@ -15,10 +15,10 @@ $configurator = new Nette\Config\Configurator;
 
 // Enable Nette Debugger for error visualisation & logging
 //$configurator->setDebugMode($configurator::AUTO);
-$configurator->enableDebugger(__DIR__ . '/../log');
+$configurator->enableDebugger(__DIR__ . '/log');
 
 // Enable RobotLoader - this will load all classes automatically
-$configurator->setTempDirectory(__DIR__ . '/../temp');
+$configurator->setTempDirectory(__DIR__ . '/temp');
 $configurator->createRobotLoader()
 	->addDirectory(APP_DIR)
 	->addDirectory(LIBS_DIR)
