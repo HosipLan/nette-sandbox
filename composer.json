@@ -1,4 +1,6 @@
 {
+	"name": "nette/sandbox",
+	"description": "The sandbox is a pre-packaged Nette Framework project, basic configured structure for your application.",
 	"require": {
 		"php" : ">=5.3.2",
 		"nette/nette" : "2.0.3"
