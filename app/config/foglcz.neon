@@ -1,0 +1,11 @@
+# foglcz's development machine
+common:
+    parameters:
+        database:
+            driver: mysqli
+            host:   localhost
+            username: 
+            password: 
+            database: 
+
+development < common:

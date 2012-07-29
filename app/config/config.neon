@@ -5,33 +5,35 @@
 # http://nette.org/security-warning
 #
 common:
-	parameters:
+    parameters:
+        database:
+            driver: mysqli
+            host:   localhost
+            username:
+            password:
+            database:
 
-	php:
-		date.timezone: Europe/Prague
-		# zlib.output_compression: yes
+    php:
+        date.timezone: Europe/Prague
+        zlib.output_compression: yes
 
+    nette:
+        application:
+            errorPresenter: Error
 
-	nette:
-		application:
-			errorPresenter: Error
+        session:
+            expiration: 14 days
 
-		session:
-			expiration: 14 days
+    services:
+        database: DibiConnection(%database%)
 
-		database:
-			default:
-				dsn: 'mysql:host=localhost;dbname=test'
-				user:
-				password:
+        # Acl
+        acl: GlobalAcl
 
+        # individual models
+        usersModel: UsersModel(@database)
 
-	services:
-		authenticator: Authenticator
-
-
-	factories:
-
+    factories:
 
 production < common:
 

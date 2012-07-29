@@ -1,0 +1,11 @@
+# live hosting server
+common:
+    parameters:
+        database:
+            driver: mysqli
+            host:   localhost
+            username:
+            password:
+            database:
+
+production < common:
