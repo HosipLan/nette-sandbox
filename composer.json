@@ -3,15 +3,9 @@
     "config": {
         "vendor-dir": "libs"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://github.com/nette/nette"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
-        "nette/nette": "dev-master",
+        "nette/nette": "@dev",
         "dg/dibi": "2.*"
     }
 }

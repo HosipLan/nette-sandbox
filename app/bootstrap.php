@@ -17,20 +17,20 @@ $configurator->enableDebugger(__DIR__ . '/../log');
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 $configurator->createRobotLoader()
 	->addDirectory(APP_DIR)
-    ->addDirectory(LIBS_DIR . '/nette/nette/Nette')
+	->addDirectory(LIBS_DIR . '/nette/nette/Nette')
 	->register();
 
 // Create Dependency Injection container from config.neon file
 $configurator->addConfig(__DIR__ . '/config/config.neon');
 
 // Append config based on the machine
-if(false) {
+if (false) {
     $configurator->addConfig(__DIR__ . '/config/live.neon', \Nette\Config\Configurator::PRODUCTION);
-}
-elseif(false) {
+
+} elseif (false) {
     $configurator->addConfig(__DIR__ . '/config/stage.neon', \Nette\Config\Configurator::PRODUCTION);
-}
-elseif($_SERVER['SERVER_ADMIN'] === 'apache@ptacek-dell.RD') {
+
+} elseif (isset($_SERVER['SERVER_ADMIN']) && $_SERVER['SERVER_ADMIN'] === 'apache@ptacek-dell.RD') {
     $configurator->addConfig(__DIR__ . '/config/foglcz.neon', \Nette\Config\Configurator::DEVELOPMENT);
 }
 
